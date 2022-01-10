@@ -45,17 +45,17 @@ export class PainelComponent implements OnInit, OnDestroy {
       //incrementa a barra de progresso no componente progresso
       this.progresso = this.progresso + (100 / this.frases.length)
 
-      //
+      //verificar vitória
       if(this.rodada === 4){
         this.encerrarJogo.emit('vitória');
       }
       
-      //atualiza o objeto rodadaFrase que contem a frase exibida para o usuario
+      //atualiza o objeto rodadaFrase que contém a frase exibida para o usuário
       this.atualizaRodada()
  
     } else {
 
-      //diminuir a variavel tentativas
+      //diminuir a variável tentativas
       this.tentativas--
     
       if (this.tentativas === -1) {
@@ -67,11 +67,11 @@ export class PainelComponent implements OnInit, OnDestroy {
 
   public atualizaRodada(): void {
 
-    //define a frade da rodada com base em algum criterio
+    //define a frase da rodada com base em algum critério
     this.rodadaFrase = this.frases[this.rodada];
 
-    //limpar resposta do usuario
-    this.resposta = ''
+    //limpar resposta do usuário
+    this.resposta = '';
 
   }
 }
